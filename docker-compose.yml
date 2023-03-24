@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:12-alpine
     environment:
-      POSTGRES_PASSWORD: 123455
+      POSTGRES_PASSWORD: password
       POSTGRES_USERNAME: postgres
-      POSTGRES_DB: nestjs-recipe
+      POSTGRES_DB: app
     ports:
       - 5432:5432
   adminer:

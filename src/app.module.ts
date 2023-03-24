@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Ingredient, Recipe } from './recipe/entity/recipe.entity';
 import { RecipeModule } from './recipe/recipe.module';
 
 @Module({
@@ -10,9 +11,9 @@ import { RecipeModule } from './recipe/recipe.module';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: '123455',
-      database: 'nestjs-recipe',
-      entities: [],
+      password: 'password',
+      database: 'app',
+      entities: [Recipe, Ingredient],
       synchronize: true,
       logging: true,
     }),
