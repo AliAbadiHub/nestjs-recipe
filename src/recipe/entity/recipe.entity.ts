@@ -15,7 +15,10 @@ export class Recipe {
   @Column()
   description: string;
 
-  @OneToMany(() => Ingredient, (ingredient) => ingredient.recipe)
+  @OneToMany(() => Ingredient, (ingredient) => ingredient.recipe, {
+    cascade: true,
+    eager: true,
+  })
   ingredients: Ingredient[];
 }
 
@@ -34,8 +37,7 @@ export class Ingredient {
   quantity: number;
 
   @ManyToOne(() => Recipe, (recipe) => recipe.ingredients, {
-    cascade: true,
-    eager: true,
+    onDelete: 'CASCADE',
   })
   recipe: Recipe;
 }

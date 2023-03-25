@@ -21,7 +21,7 @@ export class RecipeService {
   async getRecipe(id: string): Promise<Recipe> {
     const recipe = this.recipeRepository.findOne({ where: { id } });
     if (!recipe) {
-      throw new HttpException('Recipe not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('NotFound', HttpStatus.NOT_FOUND);
     }
     return recipe;
   }

@@ -4,8 +4,10 @@ import {
   Delete,
   Get,
   Param,
+  ParseUUIDPipe,
   Patch,
   Post,
+  ValidationPipe,
 } from '@nestjs/common';
 import { RecipeDto } from './dto/recipe.dto';
 import { UpdatedescriptionDto } from './dto/update-description.dto';
